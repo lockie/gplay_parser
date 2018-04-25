@@ -1,0 +1,26 @@
+version: '2.3'
+volumes:
+  data:
+services:
+  gplay-parser:
+    build: gplay_parser
+    ports:
+      - 8080:8080
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+  db:
+    image: mysql:5
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      - MYSQL_DATABASE=default
+    volumes:
+      - data:/var/lib/mysql
+      - ./mysql:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: "mysql -D default"
+      interval: 6s
+      retries: 10
+      start_period: 10s
+    restart: unless-stopped

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Google Play parser</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/semantic.min.css">
+    </head>
+    <body>
+
+        <div class="ui grid container">
+
+            <div class="row">
+                <div class="column">
+                    <h1 class="ui header">Google Play parser</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <div class="ui negative message" style="display: none;" id="error-message">
+                        <i class="close icon"></i>
+                        <div class="header">
+                           Error
+                        </div>
+                        <p id="error-message-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <form class="ui form" id="query-form">
+                        <div class="field">
+                            <label>Enter app URL</label>
+                            <input type="text" id="query">
+                        </div>
+                        <button class="ui button" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <div class="ui inverted dimmer" id="loader">
+                    <div class="ui text loader">Loading</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <div class="ui container" id="result"></div>
+            </div>
+        </div>
+
+        <script src="js/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-3.2.1.min.js"><\/script>')</script>
+        <script src="js/main.js"></script>
+        <script src="js/semantic.min.js"></script>
+
+    </body>
+</html>
+
